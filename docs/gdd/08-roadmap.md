@@ -4,14 +4,19 @@
 
 **Objetivo:** ver se o estilo funciona num celular de verdade.
 
-- [ ] Escolher a paleta base
-- [ ] Corpo base 32 × 48 (3 direções, parado + andar)
-- [ ] 2 cabelos com troca de cor por paleta
-- [ ] 3 chapéus usando a âncora de cabeça
-- [ ] Pedaço do mapa (Casa) em 16 × 16
-- [ ] Shader de dessaturação funcionando (0% → 100%)
-- [ ] Projeto Godot configurado (360 × 640, retrato, escala inteira)
-- [ ] Personagem andando no mapa por toque, rodando no Android
+Protótipo em [`jogo/`](../../jogo/README.md), com arte provisória gerada por código.
+
+- [ ] Escolher a paleta base (as atuais são provisórias)
+- [x] Corpo base 32 × 48 (3 direções, parado + andar)
+- [x] 2 cabelos com troca de cor por paleta
+- [x] 3 chapéus usando a âncora de cabeça
+- [x] Pedaço do mapa (Casa) em 16 × 16
+- [x] Shader de dessaturação funcionando (0% → 100%), com 4 marcos visuais
+- [x] Projeto Godot configurado (360 × 640, retrato, escala inteira)
+- [x] Personagem andando no mapa por toque
+- [ ] Rodar num celular Android de verdade
+- [ ] Substituir a arte provisória por arte desenhada à mão
+- [ ] Escolher uma fonte pixel legível
 
 ## Fase 1 — MVP jogável
 

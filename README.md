@@ -4,6 +4,12 @@ RPG mobile em pixel art (16-bit+) sobre saúde mental. As quests são passos peq
 
 > Nome provisório. Todos os nomes de sistemas e moedas neste repositório também são provisórios.
 
+![Protótipo: o Vale ganhando cor](docs/prototipo/vida_100.png)
+
+## Protótipo
+
+O protótipo jogável da Fase 0 está em [`jogo/`](jogo/README.md) (Godot 4.4).
+
 ## Documento de design (GDD)
 
 | # | Documento | Conteúdo |

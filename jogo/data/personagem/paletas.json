@@ -1,0 +1,33 @@
+{
+  "descricao": "Cada paleta tem 4 cores na ordem: contorno, sombra, base, luz. Elas substituem os tons de cinza 51, 102, 153 e 204 dos sprites recoloríveis (shaders/troca_paleta.gdshader).",
+  "pele": [
+    {"id": "pele_1", "nome": "Pele 1", "cores": ["#7a4a3e", "#e0a88a", "#f6caa8", "#fde4cc"]},
+    {"id": "pele_2", "nome": "Pele 2", "cores": ["#6e3e34", "#d69270", "#f0b892", "#fcd6b4"]},
+    {"id": "pele_3", "nome": "Pele 3", "cores": ["#5e3428", "#b87452", "#d6956a", "#eab48a"]},
+    {"id": "pele_4", "nome": "Pele 4", "cores": ["#4e2a20", "#96583a", "#b4704a", "#cc8c62"]},
+    {"id": "pele_5", "nome": "Pele 5", "cores": ["#3a1e18", "#6e3e28", "#8a5234", "#a86c48"]},
+    {"id": "pele_6", "nome": "Pele 6", "cores": ["#2c1814", "#52301f", "#6a4028", "#84553a"]}
+  ],
+  "cabelo": [
+    {"id": "preto", "nome": "Preto", "cores": ["#1a1420", "#2a2230", "#3c3244", "#5a4e64"]},
+    {"id": "castanho_escuro", "nome": "Castanho escuro", "cores": ["#2a1a16", "#4a2e22", "#64402e", "#845a40"]},
+    {"id": "castanho", "nome": "Castanho", "cores": ["#34201a", "#60382a", "#885236", "#b0764c"]},
+    {"id": "ruivo", "nome": "Ruivo", "cores": ["#4a1e14", "#9a3e22", "#c85a2e", "#e88a4c"]},
+    {"id": "loiro", "nome": "Loiro", "cores": ["#5a4220", "#b48a3e", "#dcb658", "#f4dc8c"]},
+    {"id": "branco", "nome": "Branco", "cores": ["#4e4a52", "#9a96a2", "#c8c6ce", "#eceaf0"]},
+    {"id": "rosa", "nome": "Rosa", "cores": ["#5a2440", "#c0567e", "#e47ea2", "#f6b0c8"]},
+    {"id": "azul", "nome": "Azul", "cores": ["#1e2a5a", "#3a5aa8", "#5a86d4", "#8eb6ee"]},
+    {"id": "verde", "nome": "Verde", "cores": ["#1e4232", "#34805a", "#52a87a", "#8ad0a4"]},
+    {"id": "roxo", "nome": "Roxo", "cores": ["#34204e", "#6a4496", "#8c64bc", "#b694dc"]}
+  ],
+  "roupa": [
+    {"id": "coral", "nome": "Coral", "cores": ["#46283a", "#b45c64", "#e2807c", "#f6b09c"]},
+    {"id": "azul", "nome": "Azul", "cores": ["#22284a", "#3e4c88", "#566aae", "#7e94cc"]},
+    {"id": "verde", "nome": "Verde", "cores": ["#24402c", "#4a7c50", "#64a064", "#96c88a"]},
+    {"id": "amarelo", "nome": "Amarelo", "cores": ["#5a4224", "#c4923a", "#e6b84e", "#f6dc8a"]},
+    {"id": "roxo", "nome": "Roxo", "cores": ["#362446", "#6e4c8a", "#9068ac", "#b898cc"]},
+    {"id": "cinza", "nome": "Cinza", "cores": ["#2e2c34", "#5e5c66", "#807e88", "#a8a6b0"]},
+    {"id": "branco", "nome": "Branco", "cores": ["#4a4650", "#b8b4bc", "#dcd8de", "#f6f4f6"]},
+    {"id": "preto", "nome": "Preto", "cores": ["#141218", "#26222c", "#36303e", "#4e4658"]}
+  ]
+}

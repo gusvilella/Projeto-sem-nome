@@ -1,0 +1,95 @@
+{
+  "descricao": "Catálogo de cosméticos. Preços e raridades seguem docs/gdd/03-economia.md. 'recoloravel' indica sprites em tons de cinza que usam uma paleta (data/personagem/paletas.json).",
+  "base": {
+    "sombra": "res://arte/personagem/corpo/sombra.png",
+    "corpo": "res://arte/personagem/corpo/base.png",
+    "rosto": "res://arte/personagem/rosto/padrao.png"
+  },
+  "itens": [
+    {
+      "id": "cabelo_curto",
+      "nome": "Cabelo curto",
+      "tipo": "cabelo",
+      "raridade": "comum",
+      "gratis": true,
+      "recoloravel": true,
+      "textura": "res://arte/personagem/cabelo/curto_frente.png"
+    },
+    {
+      "id": "cabelo_longo",
+      "nome": "Cabelo longo",
+      "tipo": "cabelo",
+      "raridade": "comum",
+      "gratis": true,
+      "recoloravel": true,
+      "textura": "res://arte/personagem/cabelo/longo_frente.png",
+      "textura_tras": "res://arte/personagem/cabelo/longo_tras.png"
+    },
+    {
+      "id": "camiseta",
+      "nome": "Camiseta",
+      "tipo": "roupa_cima",
+      "raridade": "comum",
+      "gratis": true,
+      "recoloravel": true,
+      "textura": "res://arte/personagem/roupa_cima/camiseta.png"
+    },
+    {
+      "id": "casaco",
+      "nome": "Casaco",
+      "tipo": "roupa_cima",
+      "raridade": "incomum",
+      "preco_faiscas": 400,
+      "recoloravel": true,
+      "textura": "res://arte/personagem/roupa_cima/casaco.png"
+    },
+    {
+      "id": "calca",
+      "nome": "Calça",
+      "tipo": "roupa_baixo",
+      "raridade": "comum",
+      "gratis": true,
+      "recoloravel": true,
+      "textura": "res://arte/personagem/roupa_baixo/calca.png"
+    },
+    {
+      "id": "botinha",
+      "nome": "Botinha",
+      "tipo": "calcado",
+      "raridade": "comum",
+      "gratis": true,
+      "recoloravel": false,
+      "textura": "res://arte/personagem/calcado/botinha.png"
+    },
+    {
+      "id": "chapeu_bone",
+      "nome": "Boné",
+      "tipo": "chapeu",
+      "raridade": "comum",
+      "preco_faiscas": 150,
+      "recoloravel": false,
+      "esconde_cabelo": "topo",
+      "textura": "res://arte/personagem/chapeu/bone.png"
+    },
+    {
+      "id": "chapeu_gorro",
+      "nome": "Gorro de pompom",
+      "tipo": "chapeu",
+      "raridade": "incomum",
+      "preco_faiscas": 400,
+      "recoloravel": false,
+      "esconde_cabelo": "total",
+      "textura": "res://arte/personagem/chapeu/gorro.png"
+    },
+    {
+      "id": "chapeu_cogumelo",
+      "nome": "Chapéu de Cogumelo",
+      "tipo": "chapeu",
+      "raridade": "raro",
+      "preco_faiscas": 1200,
+      "recoloravel": false,
+      "esconde_cabelo": "topo",
+      "textura": "res://arte/personagem/chapeu/cogumelo.png"
+    }
+  ]
+}

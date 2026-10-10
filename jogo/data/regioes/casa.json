@@ -1,0 +1,12 @@
+{
+  "id": "casa",
+  "nome": "Casa",
+  "area": "Corpo e higiene",
+  "mapa": "res://data/mapas/casa.json",
+  "marcos": [
+    {"vida": 25, "elemento": "flores", "descricao": "Flores brotam no jardim"},
+    {"vida": 50, "elemento": "fumaca", "descricao": "A chaminé volta a soltar fumaça"},
+    {"vida": 75, "elemento": "luz", "descricao": "As janelas se acendem"},
+    {"vida": 100, "elemento": "borboletas", "descricao": "Borboletas voltam ao jardim"}
+  ]
+}
