@@ -15,7 +15,8 @@ const OPCOES := [
 	["Cor do cabelo", "cor_cabelo", "paleta:cabelo"],
 	["Roupa", "roupa_cima", "item:roupa_cima"],
 	["Cor da roupa", "cor_roupa_cima", "paleta:roupa"],
-	["Cor da calça", "cor_roupa_baixo", "paleta:roupa"],
+	["Roupa de baixo", "roupa_baixo", "item:roupa_baixo"],
+	["Cor de baixo", "cor_roupa_baixo", "paleta:roupa"],
 	["Chapéu", "chapeu", "item:chapeu"],
 ]
 
@@ -47,7 +48,7 @@ func _construir() -> void:
 
 	# Topo: vida da região
 	var topo := PanelContainer.new()
-	topo.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE, Control.PRESET_MODE_MINSIZE, 4)
+	topo.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE, Control.PRESET_MODE_MINSIZE, 6)
 	raiz.add_child(topo)
 	var caixa := VBoxContainer.new()
 	topo.add_child(caixa)
@@ -59,13 +60,13 @@ func _construir() -> void:
 	slider.value_changed.connect(_ao_mudar_vida)
 	caixa.add_child(slider)
 	_rotulo_marco = Label.new()
-	_rotulo_marco.add_theme_font_size_override("font_size", 9)
+	_rotulo_marco.add_theme_font_size_override("font_size", 13)
 	caixa.add_child(_rotulo_marco)
 
 	# Aviso de marco alcançado
 	_aviso = Label.new()
 	_aviso.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
-	_aviso.position.y = 96
+	_aviso.position.y = 130
 	_aviso.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_aviso.add_theme_color_override("font_outline_color", COR_BORDA)
 	_aviso.add_theme_constant_override("outline_size", 4)
@@ -74,7 +75,7 @@ func _construir() -> void:
 
 	# Base: provador
 	var base := VBoxContainer.new()
-	base.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE, Control.PRESET_MODE_MINSIZE, 4)
+	base.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE, Control.PRESET_MODE_MINSIZE, 6)
 	base.grow_vertical = Control.GROW_DIRECTION_BEGIN
 	base.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	raiz.add_child(base)
@@ -102,7 +103,7 @@ func _construir() -> void:
 		anterior.pressed.connect(trocar.bind(opcao[1], -1))
 		grade.add_child(anterior)
 		var valor := Label.new()
-		valor.custom_minimum_size.x = 120
+		valor.custom_minimum_size.x = 190
 		valor.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		grade.add_child(valor)
 		_valores[opcao[1]] = valor
@@ -114,7 +115,7 @@ func _construir() -> void:
 
 func _criar_tema() -> Theme:
 	var tema := Theme.new()
-	tema.default_font_size = 11
+	tema.default_font_size = 15
 	tema.set_color("font_color", "Label", COR_TEXTO)
 	tema.set_color("font_color", "Button", COR_TEXTO)
 	tema.set_color("font_pressed_color", "Button", COR_TEXTO)

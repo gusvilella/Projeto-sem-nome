@@ -1,24 +1,23 @@
 # Jogo — protótipo da Fase 0
 
-Projeto Godot 4.4 para testar as bases técnicas descritas no [GDD](../docs/gdd/). **Toda a arte é provisória**: é gerada por código para validar formatos e deve ser substituída por arte desenhada à mão.
+Projeto Godot 4.4 para testar as bases técnicas descritas no [GDD](../docs/gdd/), já nas medidas e formatos da [direção de arte](../docs/gdd/05-direcao-de-arte.md) (Ragnarok em tons pastel). **Toda a arte é provisória**: é gerada por código para validar formatos e deve ser substituída por arte desenhada à mão, seguindo o [briefing para artista](../docs/arte/briefing-artista.md).
 
-> **Medidas antigas.** O protótipo usa personagem de 32 × 48 e mapa em tiles 16 × 16. A [direção de arte](../docs/gdd/05-direcao-de-arte.md) mudou depois dele (personagem 64 × 80, regiões como cenas ilustradas, rampas de 8 tons). Ele será ajustado quando chegar a arte do trabalho-teste do [briefing](../docs/arte/briefing-artista.md).
-
-| Vida 0% | Vida 50% | Vida 100% |
-|---|---|---|
-| ![](../docs/prototipo/vida_000.png) | ![](../docs/prototipo/vida_050.png) | ![](../docs/prototipo/vida_100.png) |
+| Vida 0% | Vida 50% | Vida 100% | Perto do poço |
+|---|---|---|---|
+| ![](../docs/prototipo/vida_000.png) | ![](../docs/prototipo/vida_050.png) | ![](../docs/prototipo/vida_100.png) | ![](../docs/prototipo/vida_100_poco.png) |
 
 ![Vitrine de personagens](../docs/prototipo/vitrine.png)
 
 ## O que o protótipo tem
 
-- **Personagem em camadas** (9 camadas) com animação parado/andar nas 3 direções; o lado esquerdo é o direito espelhado.
-- **Âncora de cabeça:** cabelos, rosto e chapéus têm só 3 desenhos e acompanham o balanço do corpo.
-- **Troca de paleta:** pele, cabelo e roupas são desenhados em cinza e coloridos por shader. 6 tons de pele, 10 cores de cabelo, 8 cores de roupa.
+- **Personagem chibi em 9 camadas**, quadro de 64 × 80, animação parado/andar nas 3 direções; o lado esquerdo é o direito espelhado.
+- **Âncora de cabeça:** cabelos, rosto e chapéus (quadro de 96 × 112) têm só 3 desenhos e seguem a posição da cabeça em cada quadro do corpo.
+- **Troca de paleta com rampas de 8 tons:** pele, cabelo e roupas são desenhados em cinza e coloridos por shader. 6 tons de pele, 10 cores de cabelo, 8 cores de roupa.
+- **Cosméticos de teste:** 3 cabelos (curto, longo, coque), 3 roupas de cima, calça e saia, 6 acessórios de cabeça (broto, coroa de flores, gorro, nuvenzinha, chapéu de cogumelo, capuz de ursinho).
 - **Chapéus que escondem o cabelo:** `esconde_cabelo = "topo"` usa o cabelo recortado; `"total"` esconde o cabelo inteiro.
-- **Região Casa do Vale** em tiles 16 × 16, com ordenação por Y (o personagem passa atrás da casa e das árvores).
-- **Toque para andar** com caminho em grade (A*), desviando de cerca, lago, árvores e casa.
-- **Mundo desbotado** por shader, com 4 marcos de vida: flores (25%), fumaça na chaminé (50%), janelas acesas (75%), borboletas (100%).
+- **Região Casa como cena ilustrada** de 540 × 1200 em 3/4, com chão de pedra no estilo de Prontera, canteiros, poço, postes e árvores. Objetos com ordenação por profundidade (o personagem passa atrás da casa e das árvores).
+- **Toque para andar** com caminho (A*) calculado sobre uma **máscara de área caminhável**, suavizado em linha reta quando possível. Tocar num obstáculo leva ao ponto livre mais próximo.
+- **Mundo desbotado** por shader, com 4 marcos: flores (25%), fumaça na chaminé (50%), janelas e postes acesos (75%), borboletas, folhas caindo e **luz dourada** (100%).
 - **Painel de testes:** controle deslizante de vida da região e um provador para trocar aparência.
 
 > O controle deslizante deixa a vida **descer** só para testes. No jogo, a vida de uma região nunca diminui (pilar "nunca punir").
@@ -43,7 +42,7 @@ jogo/
 ├── arte/            # PNGs (gerados por ferramentas/gerar_arte.py)
 ├── cenas/
 │   ├── personagem/  # Personagem em camadas
-│   ├── vale/        # Região, tiles, caminhos, marcos
+│   ├── vale/        # Região: cena, objetos, caminhos, marcos
 │   ├── ui/          # Painel de testes do protótipo
 │   └── principal.*  # Cena principal
 ├── data/            # Todo o conteúdo em JSON (paletas, itens, mapas, regiões)
@@ -52,7 +51,7 @@ jogo/
 └── testes/          # Testes automáticos e capturas de tela
 ```
 
-Conteúdo fica em `data/`, não no código: dá para mudar paletas, preços, marcos e o mapa sem programar. O mapa (`data/mapas/casa.json`) é desenhado com caracteres; a legenda está no próprio arquivo.
+Conteúdo fica em `data/`, não no código. `catalogo.json` (itens e preços) é editado à mão; `paletas.json`, `ancoras.json` e `regioes/casa.json` são gerados pelo script de arte junto com as imagens.
 
 ## Testes
 
@@ -76,6 +75,5 @@ O script documenta os formatos que a arte definitiva precisa seguir (tamanho dos
 ## Limitações conhecidas
 
 - Fonte padrão do Godot (não é pixel art) — escolher uma fonte pixel legível com acentos.
-- Lago e caminho sem bordas de transição (falta *autotile*).
-- Arte gerada por código: proporções e tons servem de referência, não de resultado final.
+- Arte gerada por código: proporções e tons servem de referência, não de resultado final. Itens e personagens definitivos precisam ser criações originais desenhadas à mão.
 - Ainda não foi testado num celular de verdade.

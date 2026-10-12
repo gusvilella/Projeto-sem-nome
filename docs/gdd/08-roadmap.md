@@ -4,21 +4,22 @@
 
 **Objetivo:** ver se o estilo funciona num celular de verdade.
 
-Protótipo em [`jogo/`](../../jogo/README.md), com arte provisória gerada por código e as medidas antigas (personagem 32 × 48, tiles 16 × 16). A direção de arte mudou depois dele (ver [05](05-direcao-de-arte.md)); o protótipo será ajustado quando chegar a arte do trabalho-teste.
+Protótipo em [`jogo/`](../../jogo/README.md), com arte provisória gerada por código já nas medidas da [direção de arte](05-direcao-de-arte.md).
 
 - [ ] Escolher a paleta base (as atuais são provisórias)
-- [x] Corpo base 32 × 48 (3 direções, parado + andar)
+- [x] Corpo base 64 × 80 (3 direções, parado + andar), cabeça 96 × 112 com âncora por quadro
 - [x] 2 cabelos com troca de cor por paleta
 - [x] 3 chapéus usando a âncora de cabeça
-- [x] Pedaço do mapa (Casa) em 16 × 16
+- [x] Região Casa como cena ilustrada em 3/4, com máscara de área caminhável
 - [x] Shader de dessaturação funcionando (0% → 100%), com 4 marcos visuais
-- [x] Projeto Godot configurado (360 × 640, retrato, escala inteira)
+- [x] Projeto Godot configurado (540 × 960, retrato, escala inteira)
 - [x] Personagem andando no mapa por toque
 - [ ] Rodar num celular Android de verdade
 - [x] Definir a direção de arte com referências (Ragnarok em tons pastel)
 - [x] [Briefing para artista](../arte/briefing-artista.md)
 - [ ] Pedir orçamentos e contratar o trabalho-teste
-- [ ] Ajustar o protótipo às novas medidas (64 × 80, cenas ilustradas) com a arte do trabalho-teste
+- [x] Ajustar o protótipo às novas medidas (64 × 80, cenas ilustradas, rampas de 8 tons)
+- [ ] Trocar a arte provisória pela do trabalho-teste
 - [ ] Escolher uma fonte pixel legível
 
 ## Fase 1 — MVP jogável

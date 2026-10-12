@@ -20,7 +20,7 @@ func _ready() -> void:
 	camera = Camera2D.new()
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 6.0
-	var limite := vale.tamanho_em_pixels()
+	var limite := vale.tamanho
 	camera.limit_left = 0
 	camera.limit_top = 0
 	camera.limit_right = limite.x

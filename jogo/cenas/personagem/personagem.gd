@@ -7,19 +7,20 @@ signal chegou
 
 enum Direcao { BAIXO, CIMA, LADO }
 
-const VELOCIDADE := 64.0
+const NOMES_DIRECAO := ["baixo", "cima", "lado"]
+const VELOCIDADE := 72.0
 const QUADROS_POR_SEGUNDO := {"parado": 2.0, "andar": 8.0}
-const PRIMEIRA_COLUNA := {"parado": 0, "andar": 2}
 const COLUNAS_CORPO := 6
-## Põe os pés do quadro 32 x 48 na origem do nó.
-const DESLOCAMENTO_QUADRO := Vector2(-16, -46)
+## Para trocar entre andar de lado e de frente/costas, um eixo precisa
+## dominar o outro por esta proporção (evita piscar em diagonais).
+const HISTERESE := 1.35
 
 ## Ordem de desenho, de baixo para cima.
 const CAMADAS := [
 	"sombra", "cabelo_tras", "corpo", "rosto", "roupa_baixo",
 	"calcado", "roupa_cima", "cabelo_frente", "chapeu",
 ]
-## Camadas desenhadas uma vez por direção, que seguem a âncora de cabeça.
+## Camadas desenhadas uma vez por direção, posicionadas pela âncora de cabeça.
 const CAMADAS_DE_CABECA := ["cabelo_tras", "rosto", "cabelo_frente", "chapeu"]
 
 var direcao: Direcao = Direcao.BAIXO
@@ -43,16 +44,22 @@ var _sprites := {}
 var _cabelo_recortado := false
 var _tempo := 0.0
 var _caminho := PackedVector2Array()
+var _pes := Vector2.ZERO
+var _ponto_cabeca := Vector2.ZERO
+var _altura_cabeca := 0
 
 
 func _ready() -> void:
+	_pes = Dados.vetor(Dados.ancoras["pes"])
+	_ponto_cabeca = Dados.vetor(Dados.ancoras["ponto_cabeca"])
+	_altura_cabeca = int(Dados.ancoras["quadro_cabeca"][1])
 	for nome in CAMADAS:
-		var sprite := Sprite2D.new()
-		sprite.name = nome
-		sprite.centered = false
-		sprite.offset = DESLOCAMENTO_QUADRO
-		add_child(sprite)
-		_sprites[nome] = sprite
+		var s := Sprite2D.new()
+		s.name = nome
+		s.centered = false
+		s.offset = -_ponto_cabeca if nome in CAMADAS_DE_CABECA else -_pes
+		add_child(s)
+		_sprites[nome] = s
 	atualizar_visual()
 
 
@@ -101,23 +108,20 @@ func _definir_camada(camada: String, caminho, cores := PackedColorArray()) -> vo
 	s.texture = load(caminho)
 	if camada in CAMADAS_DE_CABECA:
 		s.hframes = 3
-		s.vframes = int(s.texture.get_height() / 48.0)
+		s.vframes = maxi(1, roundi(s.texture.get_height() / float(_altura_cabeca)))
 	elif camada == "sombra":
 		s.hframes = 1
 		s.vframes = 1
 	else:
 		s.hframes = COLUNAS_CORPO
 		s.vframes = 3
-	if cores.size() == 4:
+	if cores.size() == 8:
 		var material := s.material as ShaderMaterial
 		if material == null:
 			material = ShaderMaterial.new()
 			material.shader = preload("res://shaders/troca_paleta.gdshader")
 			s.material = material
-		material.set_shader_parameter("cor_contorno", cores[0])
-		material.set_shader_parameter("cor_sombra", cores[1])
-		material.set_shader_parameter("cor_base", cores[2])
-		material.set_shader_parameter("cor_luz", cores[3])
+		material.set_shader_parameter("cores", cores)
 	else:
 		s.material = null
 
@@ -156,7 +160,16 @@ func _process(delta: float) -> void:
 func _olhar_para(vetor: Vector2) -> void:
 	if vetor.is_zero_approx():
 		return
-	if absf(vetor.x) > absf(vetor.y):
+	var ax := absf(vetor.x)
+	var ay := absf(vetor.y)
+	var de_lado := direcao == Direcao.LADO
+	if animacao == "parado":
+		de_lado = ax > ay
+	elif de_lado and ay > ax * HISTERESE:
+		de_lado = false
+	elif not de_lado and ax > ay * HISTERESE:
+		de_lado = true
+	if de_lado:
 		direcao = Direcao.LADO
 		virado_para_esquerda = vetor.x < 0
 	else:
@@ -170,11 +183,13 @@ func _mudar_animacao(nova: String) -> void:
 
 
 func _atualizar_quadro() -> void:
-	var deslocamentos: Array = Dados.ancoras[animacao]
-	var i := int(_tempo * QUADROS_POR_SEGUNDO[animacao]) % deslocamentos.size()
-	var coluna: int = PRIMEIRA_COLUNA[animacao] + i
-	var ancora := float(deslocamentos[i])
+	var colunas: Array = Dados.ancoras["colunas"][animacao]
+	var i := int(_tempo * QUADROS_POR_SEGUNDO[animacao]) % colunas.size()
+	var coluna := int(colunas[i])
+	var ancora := Dados.vetor(Dados.ancoras["cabeca"][NOMES_DIRECAO[direcao]][coluna]) - _pes
 	var espelhar := direcao == Direcao.LADO and virado_para_esquerda
+	if espelhar:
+		ancora.x = -ancora.x
 	for camada in CAMADAS:
 		var s: Sprite2D = _sprites[camada]
 		s.flip_h = espelhar
@@ -183,6 +198,6 @@ func _atualizar_quadro() -> void:
 		if camada in CAMADAS_DE_CABECA:
 			var linha := 1 if camada == "cabelo_frente" and _cabelo_recortado and s.vframes > 1 else 0
 			s.frame = linha * 3 + direcao
-			s.position.y = ancora
+			s.position = ancora
 		else:
 			s.frame = direcao * COLUNAS_CORPO + coluna

@@ -6,90 +6,39 @@
     "rosto": "res://arte/personagem/rosto/padrao.png"
   },
   "itens": [
-    {
-      "id": "cabelo_curto",
-      "nome": "Cabelo curto",
-      "tipo": "cabelo",
-      "raridade": "comum",
-      "gratis": true,
-      "recoloravel": true,
-      "textura": "res://arte/personagem/cabelo/curto_frente.png"
-    },
-    {
-      "id": "cabelo_longo",
-      "nome": "Cabelo longo",
-      "tipo": "cabelo",
-      "raridade": "comum",
-      "gratis": true,
-      "recoloravel": true,
-      "textura": "res://arte/personagem/cabelo/longo_frente.png",
-      "textura_tras": "res://arte/personagem/cabelo/longo_tras.png"
-    },
-    {
-      "id": "camiseta",
-      "nome": "Camiseta",
-      "tipo": "roupa_cima",
-      "raridade": "comum",
-      "gratis": true,
-      "recoloravel": true,
-      "textura": "res://arte/personagem/roupa_cima/camiseta.png"
-    },
-    {
-      "id": "casaco",
-      "nome": "Casaco",
-      "tipo": "roupa_cima",
-      "raridade": "incomum",
-      "preco_faiscas": 400,
-      "recoloravel": true,
-      "textura": "res://arte/personagem/roupa_cima/casaco.png"
-    },
-    {
-      "id": "calca",
-      "nome": "Calça",
-      "tipo": "roupa_baixo",
-      "raridade": "comum",
-      "gratis": true,
-      "recoloravel": true,
-      "textura": "res://arte/personagem/roupa_baixo/calca.png"
-    },
-    {
-      "id": "botinha",
-      "nome": "Botinha",
-      "tipo": "calcado",
-      "raridade": "comum",
-      "gratis": true,
-      "recoloravel": false,
-      "textura": "res://arte/personagem/calcado/botinha.png"
-    },
-    {
-      "id": "chapeu_bone",
-      "nome": "Boné",
-      "tipo": "chapeu",
-      "raridade": "comum",
-      "preco_faiscas": 150,
-      "recoloravel": false,
-      "esconde_cabelo": "topo",
-      "textura": "res://arte/personagem/chapeu/bone.png"
-    },
-    {
-      "id": "chapeu_gorro",
-      "nome": "Gorro de pompom",
-      "tipo": "chapeu",
-      "raridade": "incomum",
-      "preco_faiscas": 400,
-      "recoloravel": false,
-      "esconde_cabelo": "total",
-      "textura": "res://arte/personagem/chapeu/gorro.png"
-    },
-    {
-      "id": "chapeu_cogumelo",
-      "nome": "Chapéu de Cogumelo",
-      "tipo": "chapeu",
-      "raridade": "raro",
-      "preco_faiscas": 1200,
-      "recoloravel": false,
-      "esconde_cabelo": "topo",
-      "textura": "res://arte/personagem/chapeu/cogumelo.png"
-    }
+    {"id": "cabelo_curto", "nome": "Cabelo curto", "tipo": "cabelo", "raridade": "comum", "gratis": true, "recoloravel": true,
+     "textura": "res://arte/personagem/cabelo/curto_frente.png"},
+    {"id": "cabelo_longo", "nome": "Cabelo longo", "tipo": "cabelo", "raridade": "comum", "gratis": true, "recoloravel": true,
+     "textura": "res://arte/personagem/cabelo/longo_frente.png", "textura_tras": "res://arte/personagem/cabelo/longo_tras.png"},
+    {"id": "cabelo_coque", "nome": "Coque", "tipo": "cabelo", "raridade": "comum", "gratis": true, "recoloravel": true,
+     "textura": "res://arte/personagem/cabelo/coque_frente.png"},
+
+    {"id": "camiseta", "nome": "Camiseta", "tipo": "roupa_cima", "raridade": "comum", "gratis": true, "recoloravel": true,
+     "textura": "res://arte/personagem/roupa_cima/camiseta.png"},
+    {"id": "moletom", "nome": "Moletom", "tipo": "roupa_cima", "raridade": "comum", "gratis": true, "recoloravel": true,
+     "textura": "res://arte/personagem/roupa_cima/moletom.png"},
+    {"id": "tunica", "nome": "Túnica", "tipo": "roupa_cima", "raridade": "incomum", "preco_faiscas": 400, "recoloravel": true,
+     "textura": "res://arte/personagem/roupa_cima/tunica.png"},
+
+    {"id": "calca", "nome": "Calça", "tipo": "roupa_baixo", "raridade": "comum", "gratis": true, "recoloravel": true,
+     "textura": "res://arte/personagem/roupa_baixo/calca.png"},
+    {"id": "saia", "nome": "Saia", "tipo": "roupa_baixo", "raridade": "comum", "gratis": true, "recoloravel": true,
+     "textura": "res://arte/personagem/roupa_baixo/saia.png"},
+
+    {"id": "botinha", "nome": "Botinha", "tipo": "calcado", "raridade": "comum", "gratis": true, "recoloravel": false,
+     "textura": "res://arte/personagem/calcado/botinha.png"},
+
+    {"id": "chapeu_broto", "nome": "Broto", "tipo": "chapeu", "raridade": "comum", "gratis": true, "recoloravel": false,
+     "esconde_cabelo": "nenhum", "textura": "res://arte/personagem/chapeu/broto.png"},
+    {"id": "chapeu_coroa", "nome": "Coroa de flores", "tipo": "chapeu", "raridade": "comum", "preco_faiscas": 150, "recoloravel": false,
+     "esconde_cabelo": "nenhum", "textura": "res://arte/personagem/chapeu/coroa.png"},
+    {"id": "chapeu_gorro", "nome": "Gorro de pompom", "tipo": "chapeu", "raridade": "incomum", "preco_faiscas": 400, "recoloravel": false,
+     "esconde_cabelo": "topo", "textura": "res://arte/personagem/chapeu/gorro.png"},
+    {"id": "chapeu_nuvem", "nome": "Nuvenzinha", "tipo": "chapeu", "raridade": "raro", "preco_faiscas": 1200, "recoloravel": false,
+     "esconde_cabelo": "nenhum", "textura": "res://arte/personagem/chapeu/nuvem.png"},
+    {"id": "chapeu_cogumelo", "nome": "Chapéu de Cogumelo", "tipo": "chapeu", "raridade": "raro", "preco_faiscas": 1200, "recoloravel": false,
+     "esconde_cabelo": "topo", "textura": "res://arte/personagem/chapeu/cogumelo.png"},
+    {"id": "chapeu_capuz", "nome": "Capuz de ursinho", "tipo": "chapeu", "raridade": "épico", "preco_faiscas": 3000, "recoloravel": false,
+     "esconde_cabelo": "total", "textura": "res://arte/personagem/chapeu/capuz.png"}
   ]
 }

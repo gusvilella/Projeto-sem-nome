@@ -1,12 +1,352 @@
 {
+  "descricao": "Gerado por ferramentas/gerar_arte.py (posições dos objetos vêm da arte).",
   "id": "casa",
   "nome": "Casa",
   "area": "Corpo e higiene",
-  "mapa": "res://data/mapas/casa.json",
+  "cena": {
+    "tamanho": [
+      540,
+      1200
+    ],
+    "fundo": "res://arte/cenario/casa/fundo.png",
+    "caminhavel": "res://arte/cenario/casa/caminhavel.png",
+    "inicio": [
+      270,
+      492
+    ],
+    "chamine": [
+      321,
+      186
+    ],
+    "objetos": [
+      {
+        "textura": "res://arte/cenario/casa/casa.png",
+        "pe": [
+          270,
+          430
+        ],
+        "ancora": [
+          120,
+          246
+        ]
+      },
+      {
+        "textura": "res://arte/cenario/casa/arvore.png",
+        "pe": [
+          70,
+          252
+        ],
+        "ancora": [
+          56,
+          132
+        ],
+        "espelhar": false
+      },
+      {
+        "textura": "res://arte/cenario/casa/arvore.png",
+        "pe": [
+          168,
+          216
+        ],
+        "ancora": [
+          56,
+          132
+        ],
+        "espelhar": true
+      },
+      {
+        "textura": "res://arte/cenario/casa/arvore.png",
+        "pe": [
+          372,
+          214
+        ],
+        "ancora": [
+          56,
+          132
+        ],
+        "espelhar": false
+      },
+      {
+        "textura": "res://arte/cenario/casa/arvore.png",
+        "pe": [
+          470,
+          254
+        ],
+        "ancora": [
+          56,
+          132
+        ],
+        "espelhar": true
+      },
+      {
+        "textura": "res://arte/cenario/casa/arvore.png",
+        "pe": [
+          34,
+          716
+        ],
+        "ancora": [
+          56,
+          132
+        ],
+        "espelhar": false
+      },
+      {
+        "textura": "res://arte/cenario/casa/arvore.png",
+        "pe": [
+          508,
+          704
+        ],
+        "ancora": [
+          56,
+          132
+        ],
+        "espelhar": true
+      },
+      {
+        "textura": "res://arte/cenario/casa/arvore.png",
+        "pe": [
+          30,
+          880
+        ],
+        "ancora": [
+          56,
+          132
+        ],
+        "espelhar": true
+      },
+      {
+        "textura": "res://arte/cenario/casa/arvore.png",
+        "pe": [
+          60,
+          1120
+        ],
+        "ancora": [
+          56,
+          132
+        ],
+        "espelhar": false
+      },
+      {
+        "textura": "res://arte/cenario/casa/arvore.png",
+        "pe": [
+          482,
+          1130
+        ],
+        "ancora": [
+          56,
+          132
+        ],
+        "espelhar": true
+      },
+      {
+        "textura": "res://arte/cenario/casa/poste.png",
+        "pe": [
+          196,
+          480
+        ],
+        "ancora": [
+          14,
+          92
+        ]
+      },
+      {
+        "textura": "res://arte/cenario/casa/poste.png",
+        "pe": [
+          344,
+          480
+        ],
+        "ancora": [
+          14,
+          92
+        ]
+      },
+      {
+        "textura": "res://arte/cenario/casa/poste.png",
+        "pe": [
+          80,
+          792
+        ],
+        "ancora": [
+          14,
+          92
+        ]
+      },
+      {
+        "textura": "res://arte/cenario/casa/poste.png",
+        "pe": [
+          460,
+          792
+        ],
+        "ancora": [
+          14,
+          92
+        ]
+      },
+      {
+        "textura": "res://arte/cenario/casa/poco.png",
+        "pe": [
+          270,
+          812
+        ],
+        "ancora": [
+          40,
+          86
+        ]
+      },
+      {
+        "textura": "res://arte/cenario/casa/banco.png",
+        "pe": [
+          428,
+          600
+        ],
+        "ancora": [
+          32,
+          36
+        ]
+      },
+      {
+        "textura": "res://arte/cenario/casa/banco.png",
+        "pe": [
+          112,
+          600
+        ],
+        "ancora": [
+          32,
+          36
+        ]
+      }
+    ]
+  },
   "marcos": [
-    {"vida": 25, "elemento": "flores", "descricao": "Flores brotam no jardim"},
-    {"vida": 50, "elemento": "fumaca", "descricao": "A chaminé volta a soltar fumaça"},
-    {"vida": 75, "elemento": "luz", "descricao": "As janelas se acendem"},
-    {"vida": 100, "elemento": "borboletas", "descricao": "Borboletas voltam ao jardim"}
+    {
+      "vida": 25,
+      "elemento": "flores",
+      "descricao": "Flores brotam no jardim",
+      "camadas": [
+        {
+          "textura": "res://arte/cenario/casa/flores.png",
+          "pe": [
+            0,
+            0
+          ],
+          "ancora": [
+            0,
+            0
+          ],
+          "chao": true
+        },
+        {
+          "textura": "res://arte/cenario/casa/casa_flores.png",
+          "pe": [
+            270,
+            430
+          ],
+          "ancora": [
+            120,
+            246
+          ],
+          "acima_de": 0
+        }
+      ]
+    },
+    {
+      "vida": 50,
+      "elemento": "fumaca",
+      "descricao": "A chaminé volta a soltar fumaça"
+    },
+    {
+      "vida": 75,
+      "elemento": "luz",
+      "descricao": "As janelas e os postes se acendem",
+      "camadas": [
+        {
+          "textura": "res://arte/cenario/casa/casa_luz.png",
+          "pe": [
+            270,
+            430
+          ],
+          "ancora": [
+            120,
+            246
+          ],
+          "acima_de": 0
+        },
+        {
+          "textura": "res://arte/cenario/casa/poste_luz.png",
+          "pe": [
+            196,
+            480
+          ],
+          "ancora": [
+            14,
+            92
+          ],
+          "acima_de": 10
+        },
+        {
+          "textura": "res://arte/cenario/casa/poste_luz.png",
+          "pe": [
+            344,
+            480
+          ],
+          "ancora": [
+            14,
+            92
+          ],
+          "acima_de": 11
+        },
+        {
+          "textura": "res://arte/cenario/casa/poste_luz.png",
+          "pe": [
+            80,
+            792
+          ],
+          "ancora": [
+            14,
+            92
+          ],
+          "acima_de": 12
+        },
+        {
+          "textura": "res://arte/cenario/casa/poste_luz.png",
+          "pe": [
+            460,
+            792
+          ],
+          "ancora": [
+            14,
+            92
+          ],
+          "acima_de": 13
+        }
+      ]
+    },
+    {
+      "vida": 100,
+      "elemento": "borboletas",
+      "descricao": "Borboletas, folhas e luz dourada",
+      "borboletas": [
+        [
+          110,
+          500
+        ],
+        [
+          430,
+          500
+        ],
+        [
+          120,
+          990
+        ],
+        [
+          420,
+          990
+        ],
+        [
+          270,
+          700
+        ]
+      ]
+    }
   ]
 }

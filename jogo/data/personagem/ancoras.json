@@ -1,5 +1,111 @@
 {
-  "descricao": "Âncora de cabeça: deslocamento vertical (em pixels) da cabeça em cada quadro de animação. As camadas de cabeça (rosto, cabelo, chapéu) são desenhadas uma vez por direção e seguem este deslocamento. Precisa bater com a arte do corpo (ver DESLOC em ferramentas/gerar_arte.py).",
-  "parado": [0, 1],
-  "andar": [0, -1, 0, -1]
+  "descricao": "Gerado por ferramentas/gerar_arte.py. Posição (x, y) do centro da cabeça em cada quadro do corpo, por direção e coluna. As camadas de cabeça (quadro 96 x 112) são desenhadas com o centro da cabeça em 'ponto_cabeca' e posicionadas por estas âncoras.",
+  "quadro_corpo": [
+    64,
+    80
+  ],
+  "pes": [
+    32,
+    76
+  ],
+  "quadro_cabeca": [
+    96,
+    112
+  ],
+  "ponto_cabeca": [
+    48,
+    72
+  ],
+  "colunas": {
+    "parado": [
+      0,
+      1
+    ],
+    "andar": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "cabeca": {
+    "baixo": [
+      [
+        32,
+        25
+      ],
+      [
+        32,
+        26
+      ],
+      [
+        32,
+        25
+      ],
+      [
+        32,
+        24
+      ],
+      [
+        32,
+        25
+      ],
+      [
+        32,
+        24
+      ]
+    ],
+    "cima": [
+      [
+        32,
+        25
+      ],
+      [
+        32,
+        26
+      ],
+      [
+        32,
+        25
+      ],
+      [
+        32,
+        24
+      ],
+      [
+        32,
+        25
+      ],
+      [
+        32,
+        24
+      ]
+    ],
+    "lado": [
+      [
+        33,
+        25
+      ],
+      [
+        33,
+        26
+      ],
+      [
+        33,
+        25
+      ],
+      [
+        33,
+        24
+      ],
+      [
+        33,
+        25
+      ],
+      [
+        33,
+        24
+      ]
+    ]
+  }
 }

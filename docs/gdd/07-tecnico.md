@@ -18,7 +18,7 @@
 
 ## Configuração do projeto
 
-- Resolução base **540 × 960**, retrato (ver [05](05-direcao-de-arte.md#medidas)). O protótipo da Fase 0 ainda usa as medidas antigas (360 × 640, personagem 32 × 48).
+- Resolução base **540 × 960**, retrato (ver [05](05-direcao-de-arte.md#medidas)).
 - `display/window/stretch/mode = viewport`, `stretch/scale_mode = integer`.
 - Filtro de textura padrão: **Nearest**.
 - Câmera com *pixel snap* para evitar tremidas.

@@ -40,7 +40,7 @@ func lista_paletas(grupo: String) -> Array:
 	return paletas.get(grupo, [])
 
 
-## As 4 cores (contorno, sombra, base, luz) de uma paleta.
+## Os 8 tons de uma paleta, do contorno à luz.
 func cores_da_paleta(grupo: String, indice: int) -> PackedColorArray:
 	var lista := lista_paletas(grupo)
 	var cores := PackedColorArray()
@@ -49,6 +49,10 @@ func cores_da_paleta(grupo: String, indice: int) -> PackedColorArray:
 	for hex in lista[wrapi(indice, 0, lista.size())]["cores"]:
 		cores.append(Color.html(hex))
 	return cores
+
+
+func vetor(par: Array) -> Vector2:
+	return Vector2(par[0], par[1])
 
 
 func item(id: String) -> Dictionary:

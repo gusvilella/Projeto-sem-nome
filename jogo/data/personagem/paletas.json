@@ -1,33 +1,369 @@
 {
-  "descricao": "Cada paleta tem 4 cores na ordem: contorno, sombra, base, luz. Elas substituem os tons de cinza 51, 102, 153 e 204 dos sprites recoloríveis (shaders/troca_paleta.gdshader).",
+  "descricao": "Gerado por ferramentas/gerar_arte.py a partir de cores-base (edite lá). Cada paleta tem 8 tons, do contorno à luz, que substituem os cinzas 28, 56, 84, 112, 140, 168, 196 e 224 dos sprites recoloríveis (shaders/troca_paleta.gdshader).",
   "pele": [
-    {"id": "pele_1", "nome": "Pele 1", "cores": ["#7a4a3e", "#e0a88a", "#f6caa8", "#fde4cc"]},
-    {"id": "pele_2", "nome": "Pele 2", "cores": ["#6e3e34", "#d69270", "#f0b892", "#fcd6b4"]},
-    {"id": "pele_3", "nome": "Pele 3", "cores": ["#5e3428", "#b87452", "#d6956a", "#eab48a"]},
-    {"id": "pele_4", "nome": "Pele 4", "cores": ["#4e2a20", "#96583a", "#b4704a", "#cc8c62"]},
-    {"id": "pele_5", "nome": "Pele 5", "cores": ["#3a1e18", "#6e3e28", "#8a5234", "#a86c48"]},
-    {"id": "pele_6", "nome": "Pele 6", "cores": ["#2c1814", "#52301f", "#6a4028", "#84553a"]}
+    {
+      "id": "pele_1",
+      "nome": "Pele 1",
+      "base": "#fde2cc",
+      "cores": [
+        "#6a433d",
+        "#9d8079",
+        "#b6998f",
+        "#d2b5a6",
+        "#e9ccba",
+        "#fde2cc",
+        "#fee7d3",
+        "#feeddd"
+      ]
+    },
+    {
+      "id": "pele_2",
+      "nome": "Pele 2",
+      "base": "#f6caa8",
+      "cores": [
+        "#673730",
+        "#996a5f",
+        "#b18272",
+        "#cc9d87",
+        "#e2b498",
+        "#f6caa8",
+        "#f9d4b5",
+        "#fbdfc5"
+      ]
+    },
+    {
+      "id": "pele_3",
+      "nome": "Pele 3",
+      "base": "#e8ad86",
+      "cores": [
+        "#612a24",
+        "#905348",
+        "#a76958",
+        "#c1826a",
+        "#d59879",
+        "#e8ad86",
+        "#eebd98",
+        "#f4ceae"
+      ]
+    },
+    {
+      "id": "pele_4",
+      "nome": "Pele 4",
+      "base": "#c98a62",
+      "cores": [
+        "#541e18",
+        "#7d3c31",
+        "#914f3e",
+        "#a7644b",
+        "#b97757",
+        "#c98a62",
+        "#d8a179",
+        "#e5b995"
+      ]
+    },
+    {
+      "id": "pele_5",
+      "nome": "Pele 5",
+      "base": "#a0663f",
+      "cores": [
+        "#43130e",
+        "#63271c",
+        "#733625",
+        "#85472f",
+        "#935737",
+        "#a0663f",
+        "#bb8359",
+        "#d1a37b"
+      ]
+    },
+    {
+      "id": "pele_6",
+      "nome": "Pele 6",
+      "base": "#7a4e34",
+      "cores": [
+        "#330f0c",
+        "#4c1f18",
+        "#582a1f",
+        "#653727",
+        "#70432e",
+        "#7a4e34",
+        "#9f7051",
+        "#bf9575"
+      ]
+    }
   ],
   "cabelo": [
-    {"id": "preto", "nome": "Preto", "cores": ["#1a1420", "#2a2230", "#3c3244", "#5a4e64"]},
-    {"id": "castanho_escuro", "nome": "Castanho escuro", "cores": ["#2a1a16", "#4a2e22", "#64402e", "#845a40"]},
-    {"id": "castanho", "nome": "Castanho", "cores": ["#34201a", "#60382a", "#885236", "#b0764c"]},
-    {"id": "ruivo", "nome": "Ruivo", "cores": ["#4a1e14", "#9a3e22", "#c85a2e", "#e88a4c"]},
-    {"id": "loiro", "nome": "Loiro", "cores": ["#5a4220", "#b48a3e", "#dcb658", "#f4dc8c"]},
-    {"id": "branco", "nome": "Branco", "cores": ["#4e4a52", "#9a96a2", "#c8c6ce", "#eceaf0"]},
-    {"id": "rosa", "nome": "Rosa", "cores": ["#5a2440", "#c0567e", "#e47ea2", "#f6b0c8"]},
-    {"id": "azul", "nome": "Azul", "cores": ["#1e2a5a", "#3a5aa8", "#5a86d4", "#8eb6ee"]},
-    {"id": "verde", "nome": "Verde", "cores": ["#1e4232", "#34805a", "#52a87a", "#8ad0a4"]},
-    {"id": "roxo", "nome": "Roxo", "cores": ["#34204e", "#6a4496", "#8c64bc", "#b694dc"]}
+    {
+      "id": "cabelo_1",
+      "nome": "Preto",
+      "base": "#5a5266",
+      "cores": [
+        "#20192b",
+        "#37313f",
+        "#403949",
+        "#4a4355",
+        "#534b5e",
+        "#5a5266",
+        "#877891",
+        "#b09db6"
+      ]
+    },
+    {
+      "id": "cabelo_2",
+      "nome": "Castanho escuro",
+      "base": "#7a5440",
+      "cores": [
+        "#331211",
+        "#4c2621",
+        "#583129",
+        "#653d32",
+        "#704939",
+        "#7a5440",
+        "#9f775e",
+        "#bf9b81"
+      ]
+    },
+    {
+      "id": "cabelo_3",
+      "nome": "Castanho",
+      "base": "#a87650",
+      "cores": [
+        "#471a14",
+        "#683428",
+        "#794332",
+        "#8b553d",
+        "#9b6647",
+        "#a87650",
+        "#c0926a",
+        "#d5ae89"
+      ]
+    },
+    {
+      "id": "cabelo_4",
+      "nome": "Ruivo",
+      "base": "#d8744a",
+      "cores": [
+        "#5b0f0e",
+        "#86251e",
+        "#9c3729",
+        "#b34c35",
+        "#c76040",
+        "#d8744a",
+        "#e38e63",
+        "#ecaa83"
+      ]
+    },
+    {
+      "id": "cabelo_5",
+      "nome": "Loiro",
+      "base": "#f0cc78",
+      "cores": [
+        "#65371e",
+        "#95623d",
+        "#ad7b4c",
+        "#c7985d",
+        "#ddb36b",
+        "#f0cc78",
+        "#f4d58b",
+        "#f8e0a4"
+      ]
+    },
+    {
+      "id": "cabelo_6",
+      "nome": "Branco",
+      "base": "#e6e2ea",
+      "cores": [
+        "#544762",
+        "#8e8b91",
+        "#a5a2a8",
+        "#bfbbc2",
+        "#d3d0d7",
+        "#e6e2ea",
+        "#eee9f0",
+        "#f4eff5"
+      ]
+    },
+    {
+      "id": "cabelo_7",
+      "nome": "Rosa",
+      "base": "#f09ab8",
+      "cores": [
+        "#652b4a",
+        "#955675",
+        "#ad6787",
+        "#c77b9b",
+        "#dd8bab",
+        "#f09ab8",
+        "#f4a9bc",
+        "#f8bbc6"
+      ]
+    },
+    {
+      "id": "cabelo_8",
+      "nome": "Azul",
+      "base": "#7aa4e0",
+      "cores": [
+        "#20315e",
+        "#40568b",
+        "#4f6aa1",
+        "#5f7fba",
+        "#6d92ce",
+        "#7aa4e0",
+        "#8ec8e9",
+        "#a6e6f0"
+      ]
+    },
+    {
+      "id": "cabelo_9",
+      "nome": "Verde",
+      "base": "#7cc49a",
+      "cores": [
+        "#235246",
+        "#457a69",
+        "#538d77",
+        "#63a386",
+        "#70b491",
+        "#7cc49a",
+        "#91d5a5",
+        "#aae3b3"
+      ]
+    },
+    {
+      "id": "cabelo_10",
+      "nome": "Roxo",
+      "base": "#a888d4",
+      "cores": [
+        "#3c2659",
+        "#644c83",
+        "#765b99",
+        "#896cb0",
+        "#9a7bc3",
+        "#a888d4",
+        "#c59be0",
+        "#dfb1ea"
+      ]
+    }
   ],
   "roupa": [
-    {"id": "coral", "nome": "Coral", "cores": ["#46283a", "#b45c64", "#e2807c", "#f6b09c"]},
-    {"id": "azul", "nome": "Azul", "cores": ["#22284a", "#3e4c88", "#566aae", "#7e94cc"]},
-    {"id": "verde", "nome": "Verde", "cores": ["#24402c", "#4a7c50", "#64a064", "#96c88a"]},
-    {"id": "amarelo", "nome": "Amarelo", "cores": ["#5a4224", "#c4923a", "#e6b84e", "#f6dc8a"]},
-    {"id": "roxo", "nome": "Roxo", "cores": ["#362446", "#6e4c8a", "#9068ac", "#b898cc"]},
-    {"id": "cinza", "nome": "Cinza", "cores": ["#2e2c34", "#5e5c66", "#807e88", "#a8a6b0"]},
-    {"id": "branco", "nome": "Branco", "cores": ["#4a4650", "#b8b4bc", "#dcd8de", "#f6f4f6"]},
-    {"id": "preto", "nome": "Preto", "cores": ["#141218", "#26222c", "#36303e", "#4e4658"]}
+    {
+      "id": "roupa_1",
+      "nome": "Coral",
+      "base": "#ec8f86",
+      "cores": [
+        "#63242e",
+        "#924850",
+        "#aa585d",
+        "#c4696b",
+        "#d97c78",
+        "#ec8f86",
+        "#f1a598",
+        "#f6bcae"
+      ]
+    },
+    {
+      "id": "roupa_2",
+      "nome": "Azul",
+      "base": "#7e94d0",
+      "cores": [
+        "#232a57",
+        "#454f81",
+        "#546096",
+        "#6474ad",
+        "#7285bf",
+        "#7e94d0",
+        "#92b8dd",
+        "#aad8e8"
+      ]
+    },
+    {
+      "id": "roupa_3",
+      "nome": "Verde",
+      "base": "#88c08a",
+      "cores": [
+        "#275139",
+        "#4e775c",
+        "#5d8a69",
+        "#6e9f77",
+        "#7cb182",
+        "#88c08a",
+        "#a0d29d",
+        "#bce1b4"
+      ]
+    },
+    {
+      "id": "roupa_4",
+      "nome": "Amarelo",
+      "base": "#f0cc6a",
+      "cores": [
+        "#653519",
+        "#955e33",
+        "#ad7941",
+        "#c79650",
+        "#ddb25e",
+        "#f0cc6a",
+        "#f4d57f",
+        "#f8df9a"
+      ]
+    },
+    {
+      "id": "roupa_5",
+      "nome": "Roxo",
+      "base": "#b49ad4",
+      "cores": [
+        "#412d59",
+        "#6c5983",
+        "#7f6a99",
+        "#947cb0",
+        "#a58cc3",
+        "#b49ad4",
+        "#cdabe0",
+        "#e3bfea"
+      ]
+    },
+    {
+      "id": "roupa_6",
+      "nome": "Cinza",
+      "base": "#a8a6b2",
+      "cores": [
+        "#39344b",
+        "#67666e",
+        "#787680",
+        "#8b8994",
+        "#9a98a4",
+        "#a8a6b2",
+        "#c0bcc8",
+        "#d6d0da"
+      ]
+    },
+    {
+      "id": "roupa_7",
+      "nome": "Branco",
+      "base": "#f0ece8",
+      "cores": [
+        "#654e49",
+        "#95908f",
+        "#ada8a6",
+        "#c7c3c0",
+        "#ddd9d5",
+        "#f0ece8",
+        "#f4f1ed",
+        "#f8f5f2"
+      ]
+    },
+    {
+      "id": "roupa_8",
+      "nome": "Preto",
+      "base": "#5a5664",
+      "cores": [
+        "#1f1a2a",
+        "#37343e",
+        "#403d48",
+        "#4a4753",
+        "#534f5c",
+        "#5a5664",
+        "#877e8f",
+        "#afa3b5"
+      ]
+    }
   ]
 }
