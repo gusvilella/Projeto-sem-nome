@@ -5,7 +5,7 @@
 **Por quê:**
 
 - Gratuito e de código aberto, **sem royalties** nem taxa por instalação.
-- Excelente para 2D e pixel art (escala inteira, *snap* de pixels, *TileMap*, shaders 2D simples).
+- Excelente para 2D e pixel art (escala inteira, *snap* de pixels, luzes 2D, partículas, shaders 2D simples).
 - Exporta para Android e iOS.
 - GDScript é fácil de aprender; projeto leve, abre em computador modesto.
 
@@ -18,7 +18,7 @@
 
 ## Configuração do projeto
 
-- Resolução base **360 × 640**, retrato.
+- Resolução base **540 × 960**, retrato (ver [05](05-direcao-de-arte.md#medidas)). O protótipo da Fase 0 ainda usa as medidas antigas (360 × 640, personagem 32 × 48).
 - `display/window/stretch/mode = viewport`, `stretch/scale_mode = integer`.
 - Filtro de textura padrão: **Nearest**.
 - Câmera com *pixel snap* para evitar tremidas.

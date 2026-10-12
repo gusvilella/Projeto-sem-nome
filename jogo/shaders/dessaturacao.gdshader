@@ -1,6 +1,6 @@
 // Mundo desbotado: o cenário é desenhado colorido uma vez só e este shader
 // tira a cor de acordo com a vida da região (0 = adormecido, 1 = vivo).
-// Ver docs/gdd/05-direcao-de-arte.md#mundo-desbotado.
+// Ver docs/gdd/05-direcao-de-arte.md#mundo-desbotado-e-luz.
 shader_type canvas_item;
 
 uniform float vida : hint_range(0.0, 1.0) = 0.0;

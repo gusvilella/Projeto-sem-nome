@@ -1,6 +1,8 @@
 # Jogo — protótipo da Fase 0
 
-Projeto Godot 4.4 para testar a direção de arte e as bases técnicas descritas no [GDD](../docs/gdd/). **Toda a arte é provisória**: é gerada por código para validar formatos e deve ser substituída por arte desenhada à mão.
+Projeto Godot 4.4 para testar as bases técnicas descritas no [GDD](../docs/gdd/). **Toda a arte é provisória**: é gerada por código para validar formatos e deve ser substituída por arte desenhada à mão.
+
+> **Medidas antigas.** O protótipo usa personagem de 32 × 48 e mapa em tiles 16 × 16. A [direção de arte](../docs/gdd/05-direcao-de-arte.md) mudou depois dele (personagem 64 × 80, regiões como cenas ilustradas, rampas de 8 tons). Ele será ajustado quando chegar a arte do trabalho-teste do [briefing](../docs/arte/briefing-artista.md).
 
 | Vida 0% | Vida 50% | Vida 100% |
 |---|---|---|

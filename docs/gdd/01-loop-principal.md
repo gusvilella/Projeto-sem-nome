@@ -70,7 +70,7 @@ O jogo se passa no **Vale** (nome provisório), um vilarejo que perdeu a cor. El
 - Cada região tem um **nível de vida** de 0 a 100.
 - Quests da região sobem o nível. O nível **nunca desce** (pilar "nunca punir").
 - Em marcos (10, 25, 50, 75, 100), a região muda visualmente: flores aparecem, NPCs voltam, uma construção é restaurada, uma música nova toca.
-- A dessaturação é feita por shader, então a arte é desenhada **uma vez só**, colorida (ver [05](05-direcao-de-arte.md#mundo-desbotado)).
+- A dessaturação é feita por shader, então a arte é desenhada **uma vez só**, colorida (ver [05](05-direcao-de-arte.md#mundo-desbotado-e-luz)).
 
 Isso cria uma metáfora visual de recuperação sem precisar de texto nenhum — e mostra, de forma espacial, quais áreas da vida a pessoa tem cuidado e quais estão esquecidas.
 

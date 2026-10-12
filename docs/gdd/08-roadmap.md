@@ -4,7 +4,7 @@
 
 **Objetivo:** ver se o estilo funciona num celular de verdade.
 
-Protótipo em [`jogo/`](../../jogo/README.md), com arte provisória gerada por código.
+Protótipo em [`jogo/`](../../jogo/README.md), com arte provisória gerada por código e as medidas antigas (personagem 32 × 48, tiles 16 × 16). A direção de arte mudou depois dele (ver [05](05-direcao-de-arte.md)); o protótipo será ajustado quando chegar a arte do trabalho-teste.
 
 - [ ] Escolher a paleta base (as atuais são provisórias)
 - [x] Corpo base 32 × 48 (3 direções, parado + andar)
@@ -15,7 +15,10 @@ Protótipo em [`jogo/`](../../jogo/README.md), com arte provisória gerada por c
 - [x] Projeto Godot configurado (360 × 640, retrato, escala inteira)
 - [x] Personagem andando no mapa por toque
 - [ ] Rodar num celular Android de verdade
-- [ ] Substituir a arte provisória por arte desenhada à mão
+- [x] Definir a direção de arte com referências (Ragnarok em tons pastel)
+- [x] [Briefing para artista](../arte/briefing-artista.md)
+- [ ] Pedir orçamentos e contratar o trabalho-teste
+- [ ] Ajustar o protótipo às novas medidas (64 × 80, cenas ilustradas) com a arte do trabalho-teste
 - [ ] Escolher uma fonte pixel legível
 
 ## Fase 1 — MVP jogável
@@ -73,13 +76,14 @@ Protótipo em [`jogo/`](../../jogo/README.md), com arte provisória gerada por c
 - Itens sazonais (São João, Natal...)
 - Inglês e espanhol
 - Backup opcional na nuvem
+- [A Praça](09-praca.md): espaço compartilhado e seguro para ver outros jogadores, com reações positivas e presentes
 
 ## Perguntas em aberto
 
 - [ ] **Nome do jogo.** E nomes finais para o Vale, as Faíscas, os níveis de energia.
 - [ ] **Companheiro:** existe? Que forma tem (bicho, espírito, lanterna)? É a voz do jogo?
-- [ ] **Personagem anda livremente pelo mapa** ou o mapa é mais uma "vitrine" que se toca para navegar? (impacta muito o escopo)
+- [x] ~~**Personagem anda livremente pelo mapa?**~~ Cada região é uma cena ilustrada vertical em que o personagem anda (ver [05](05-direcao-de-arte.md#regiões-como-cenas-ilustradas)).
 - [ ] **História:** qual é o mistério do Vale? Por que perdeu a cor? (cuidado para não virar metáfora pesada demais)
 - [ ] **Quests personalizadas** no MVP ou só depois?
-- [ ] Quem desenha a arte? Você, parceria ou freelancer? (define o ritmo de lançamento de itens)
+- [x] ~~Quem desenha a arte?~~ Artista freelancer de pixel art (ver [briefing](../arte/briefing-artista.md)).
 - [ ] Faixas de preço finais em reais.

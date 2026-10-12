@@ -23,3 +23,8 @@ O protótipo jogável da Fase 0 está em [`jogo/`](jogo/README.md) (Godot 4.4).
 | 06 | [Segurança, ética e legal](docs/gdd/06-seguranca-etica-legal.md) | Recursos de crise, tom de voz, LGPD |
 | 07 | [Técnico](docs/gdd/07-tecnico.md) | Godot, arquitetura, salvamento, notificações |
 | 08 | [Roadmap](docs/gdd/08-roadmap.md) | Fases, MVP, playtest, perguntas em aberto |
+| 09 | [A Praça](docs/gdd/09-praca.md) | Espaço compartilhado e seguro (depois do lançamento) |
+
+## Arte
+
+- [Briefing para artista](docs/arte/briefing-artista.md): estilo, especificações técnicas e lista de entregas para pedir orçamento.
