@@ -30,8 +30,9 @@ def _e_fundo(c, limiar_luz=165, limiar_sat=45):
     return max(r, g, b) - min(r, g, b) <= limiar_sat and (r + g + b) / 3 >= limiar_luz
 
 
-def remover_fundo(img):
-    """Torna transparente o fundo claro e pouco saturado ligado às bordas."""
+def remover_fundo(img, limiar_sat=45):
+    """Torna transparente o fundo claro e pouco saturado ligado às bordas.
+    Diminua limiar_sat se algum objeto claro (ex.: nuvem branca) estiver sumindo."""
     img = img.convert("RGBA")
     w, h = img.size
     px = img.load()
@@ -47,7 +48,7 @@ def remover_fundo(img):
         if visto[i]:
             continue
         visto[i] = 1
-        if not _e_fundo(px[x, y]):
+        if not _e_fundo(px[x, y], limiar_sat=limiar_sat):
             continue
         px[x, y] = (0, 0, 0, 0)
         for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):

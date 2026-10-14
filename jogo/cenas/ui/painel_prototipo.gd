@@ -157,6 +157,9 @@ func valores_da_opcao(chave: String) -> Array:
 		elif partes[1] == "completo":
 			lista.append(["", "Em camadas"])
 		for item in Dados.itens_do_tipo(partes[1]):
+			# chapéus feitos para um personagem completo só aparecem com ele
+			if partes[1] == "chapeu" and item.get("personagem", "") != personagem.aparencia.get("completo", ""):
+				continue
 			lista.append([item["id"], item["nome"]])
 	return lista
 
@@ -168,6 +171,8 @@ func trocar(chave: String, passo: int) -> void:
 		if lista[i][0] == personagem.aparencia[chave]:
 			atual = i
 	personagem.vestir(chave, lista[wrapi(atual + passo, 0, lista.size())][0])
+	if chave == "completo":
+		personagem.vestir("chapeu", "")
 	_atualizar_textos()
 
 

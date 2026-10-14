@@ -67,9 +67,11 @@ Same character and style (see attached reference), front view only. Create a gri
 Same pixel art style. A vertical 9:16 game scene seen from a 3/4 top-down camera, like a classic 2000s MMORPG town: a small cozy half-timbered cottage with a terracotta tile roof, cream walls, wooden arched door and windows with flower boxes. In front, a light beige cobblestone path leading down to a small round plaza with a stone well. Pastel grass, raised stone flower beds, round fluffy trees, iron street lamps, wooden benches. Warm late-afternoon light, peaceful and empty (no people). Soft pastel colors, colored outlines, no text, no UI.
 ```
 
-**Arte de divulgação (ilustração, não pixel art):**
+**Arte de divulgação (no estilo do jogo):**
+
+A divulgação deve mostrar o jogo como ele é (ver [direção de arte](../gdd/05-direcao-de-arte.md#arte-promocional)). Anexe a imagem do personagem e uma do cenário como referência:
 ```
-A warm, cinematic anime-style illustration for a mobile game key art, vertical 9:16: a small cozy village coming back to color — the left side slightly desaturated and blue-gray, the right side full of golden late-afternoon light, flowers blooming, butterflies, leaves floating. A chibi young adult in a coral t-shirt and a red mushroom hat stands in the center, smiling gently. Hopeful, soft, healing mood. No text, no logo.
+Using the attached character and scene as references, same pixel art style, same pixel size and palette: a vertical 9:16 game cover. The same cozy village seen from a 3/4 top-down camera, split in the middle: the left half asleep (desaturated, blue-gray), the right half alive (full color, golden late-afternoon light, flowers, butterflies, floating leaves). The SAME chibi character from the reference, wearing the red mushroom hat, stands in the center on the cobblestone path, smiling. TRUE pixel art with big square pixels, no anti-aliasing, no painterly style, no text, no logo.
 ```
 
 ## 3. Trazer para o jogo

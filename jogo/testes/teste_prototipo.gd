@@ -118,8 +118,12 @@ func _testar_personagem(p: Personagem) -> void:
 	p.vestir("completo", "ia_gemini")
 	verificar(p.sprite("corpo").texture != null and p.sprite("corpo").material == null, "personagem completo no corpo, sem paleta")
 	verificar(p.sprite("cabelo_frente").texture == null and p.sprite("roupa_cima").texture == null, "personagem completo esconde as camadas")
+	p.vestir("chapeu", "ia_chapeu_cogumelo")
+	verificar(p.sprite("chapeu").texture != null, "chapéu de IA aparece no personagem de IA")
 	p.vestir("completo", "")
 	verificar(p.sprite("roupa_cima").texture != null, "volta para as camadas")
+	verificar(p.sprite("chapeu").texture == null, "chapéu de IA não aparece no personagem em camadas")
+	p.vestir("chapeu", "")
 
 	# A cabeça acompanha o corpo, inclusive espelhada.
 	var ancora := Dados.vetor(Dados.ancoras["cabeca"]["lado"][0]) - Dados.vetor(Dados.ancoras["pes"])
@@ -203,5 +207,10 @@ func _testar_provador(painel: PainelPrototipo) -> void:
 	painel.trocar("chapeu", -1)
 	verificar(painel.personagem.aparencia["chapeu"] == antes, "provador volta o chapéu")
 	verificar(painel.valores_da_opcao("cabelo").size() == Dados.itens_do_tipo("cabelo").size(), "provador lista os cabelos")
+	var chapeus_camadas := painel.valores_da_opcao("chapeu").size()
+	painel.trocar("completo", 1)
+	verificar(painel.personagem.aparencia["completo"] == "ia_gemini", "provador troca para o personagem de IA")
+	verificar(painel.valores_da_opcao("chapeu").size() == 11 and chapeus_camadas == 7, "provador lista só os chapéus de cada visual")
+	painel.trocar("completo", -1)
 	painel.slider.value = 30
 	verificar(painel.vale.vida == 30, "slider muda a vida da região")

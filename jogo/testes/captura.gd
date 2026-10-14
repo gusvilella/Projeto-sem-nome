@@ -81,6 +81,17 @@ func _vitrine() -> void:
 		_vitrine_personagem(raiz, visuais[4 + coluna], Vector2(66 + coluna * 64, 100 + 3 * 108 + 40), 0)
 	await _esperar(0.3)
 	await _capturar("vitrine.png")
+	for filho in raiz.get_children():
+		filho.queue_free()
+
+	# Personagem de IA com os acessórios extraídos da grade do Gemini.
+	var chapeus := ["", "ia_chapeu_gorro", "ia_chapeu_cogumelo", "ia_chapeu_broto", "ia_chapeu_nuvem", "ia_chapeu_coroa",
+		"ia_chapeu_capuz", "ia_chapeu_palha", "ia_chapeu_fones", "ia_chapeu_laco", "ia_chapeu_gato"]
+	for i in chapeus.size():
+		var pos := Vector2(42 + (i % 4) * 64, 110 + (i / 4) * 120)
+		_vitrine_personagem(raiz, {"completo": "ia_gemini", "chapeu": chapeus[i]}, pos, 0)
+	await _esperar(0.3)
+	await _capturar("vitrine_ia.png")
 
 
 func _vitrine_personagem(raiz: Node2D, visual: Dictionary, posicao: Vector2, direcao: int) -> void:

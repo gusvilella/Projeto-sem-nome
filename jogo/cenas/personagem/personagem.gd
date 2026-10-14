@@ -86,6 +86,9 @@ func atualizar_visual() -> void:
 			if camada != "sombra":
 				_definir_camada(camada, null)
 		_definir_camada("corpo", completo["textura"])
+		var chapeu_ia := Dados.item(aparencia["chapeu"])
+		if chapeu_ia.get("personagem", "") == completo["id"]:
+			_definir_camada("chapeu", chapeu_ia["textura"])
 		_cabelo_recortado = false
 		_atualizar_quadro()
 		return
@@ -93,6 +96,8 @@ func atualizar_visual() -> void:
 	_definir_camada("rosto", base.get("rosto"))
 
 	var chapeu := Dados.item(aparencia["chapeu"])
+	if chapeu.has("personagem"):  # feito para um personagem completo específico
+		chapeu = {}
 	var esconde: String = chapeu.get("esconde_cabelo", "nenhum")
 	_definir_camada("chapeu", chapeu.get("textura"))
 
@@ -197,7 +202,8 @@ func _atualizar_quadro() -> void:
 	var colunas: Array = Dados.ancoras["colunas"][animacao]
 	var i := int(_tempo * QUADROS_POR_SEGUNDO[animacao]) % colunas.size()
 	var coluna := int(colunas[i])
-	var ancora := Dados.vetor(Dados.ancoras["cabeca"][NOMES_DIRECAO[direcao]][coluna]) - _pes
+	var ancoras: Dictionary = Dados.item(aparencia.get("completo", "")).get("ancoras", Dados.ancoras["cabeca"])
+	var ancora := Dados.vetor(ancoras[NOMES_DIRECAO[direcao]][coluna]) - _pes
 	var espelhar := direcao == Direcao.LADO and virado_para_esquerda
 	if espelhar:
 		ancora.x = -ancora.x

@@ -26,7 +26,7 @@ Os itens e personagens precisam ser **criações originais**: as referências se
 
 1. **Ragnarok Online — praça de Prontera com pouco movimento.** Estilo dos sprites, paleta, chão de pedra, canteiros de flores, densidade de pessoas.
 2. **Ragnarok Online — multidão de jogadores.** Variedade e legibilidade dos chapéus: cada um é reconhecível no meio de todos.
-3. **Ilustração de uma praça com fonte e luz dourada.** Só para a luz e o clima (e como estilo da arte promocional, que é opcional).
+3. **Ilustração de uma praça com fonte e luz dourada.** Só para a luz e o clima.
 
 ## Especificações técnicas
 
@@ -119,7 +119,7 @@ Sugestão de 10 acessórios de cabeça, para dar o tom (a lista é aberta a idei
 
 ### Opcional
 
-- Arte promocional para a loja de apps e tela de abertura (ilustração, pode ser outro artista).
+- Arte de capa para a loja de apps e tela de abertura, **em pixel art, no mesmo estilo e escala do jogo**, usando os sprites e cenários reais.
 
 ## Direitos e créditos
 

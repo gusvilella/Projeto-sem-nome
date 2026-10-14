@@ -16,7 +16,7 @@
 |------------|-------------|---------------------|
 | **Ragnarok Online — praça de Prontera, pouco movimento** | Sprites chibi, paleta pastel, chão de pedra claro, canteiros de flores, Poring passeando, **densidade de pessoas** (~20 na tela) | Interface antiga, nomes e chat sobre as cabeças |
 | **Ragnarok Online — multidão de *headgears*** | Variedade e **legibilidade dos chapéus**: capacete amarelo, sol, globo, capuz de gato — todos reconhecíveis numa multidão | Densidade: aquilo sobrecarrega; nosso público precisa de calma |
-| **Ilustração da praça com fonte, luz dourada** | **Luz quente de fim de tarde**, folhas caindo, sombra de árvores no chão — como recompensa quando uma região revive. Estilo para **arte promocional** (loja de apps, tela de abertura) | O nível de detalhe e a saturação dentro do jogo. Era uma imagem de inspiração (parece gerada por IA e imita personagens do Ragnarok): não usar como base de assets |
+| **Ilustração da praça com fonte, luz dourada** | **Luz quente de fim de tarde**, folhas caindo, sombra de árvores no chão — como recompensa quando uma região revive. Clima geral | O nível de detalhe e a saturação dentro do jogo. Era uma imagem de inspiração (parece gerada por IA e imita personagens do Ragnarok): não usar como base de assets |
 | **Stardew Valley** | Rotina acolhedora, interface de madeira e papel | Tiles 16 × 16 e personagens pequenos |
 
 > Imagens de jogos de terceiros servem só como referência de clima e estilo. Nenhum asset, personagem ou elemento reconhecível do Ragnarok (Poring, chapéus específicos, roupas de classes) pode ser copiado. Os itens do nosso jogo precisam ser criações originais.
@@ -125,7 +125,11 @@ Por que cenas e não tiles: o visual fica muito mais próximo das referências, 
 
 ## Arte promocional
 
-Para a loja de apps, a tela de abertura e redes sociais, pode-se encomendar **ilustrações** no estilo da imagem de referência da praça com luz dourada (mais detalhadas e cinematográficas que o jogo). Pode ser outro artista.
+**A divulgação mostra o jogo como ele é.** Nada de ilustração num estilo que o jogo não tem: quem baixa por causa de uma imagem e encontra outra coisa se sente enganado. A Google Play também exige que as capturas representem o jogo de verdade.
+
+- **Capturas da loja:** telas reais do jogo, com no máximo uma faixa de texto por cima.
+- **Arte de capa e tela de abertura:** **pixel art no mesmo estilo e na mesma escala do jogo**, montada com os sprites e cenários reais (por exemplo, a mesma região em 0% e 100% de vida, lado a lado, com o personagem no meio).
+- **Vídeo curto:** gravação real de uma quest sendo concluída e a região ganhando cor.
 
 ## Ferramentas sugeridas
 
