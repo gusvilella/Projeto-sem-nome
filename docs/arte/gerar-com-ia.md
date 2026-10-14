@@ -77,10 +77,19 @@ A warm, cinematic anime-style illustration for a mobile game key art, vertical 9
 Funciona com a imagem baixada ou com um **print de tela** (o print fica um pouco menos nítido).
 
 ```bash
-python3 ferramentas/importar_sprite.py imagem_do_gemini.png personagem.png --previa previa.png
+# 1. Converter cada imagem (use --quadros quando as figuras estiverem encostadas)
+python3 ferramentas/importar_sprite.py parado.png parado_64.png --quadros 3 --previa previa.png
+python3 ferramentas/importar_sprite.py andando.png andando_64.png --quadros 4
+
+# 2. Montar a folha do jogo (6 x 3) e colocar em jogo/arte/personagem/ia/
+python3 ferramentas/montar_personagem_ia.py parado_64.png andando_64.png jogo/arte/personagem/ia/gemini.png --ordem frente,lado,costas
 ```
 
-O script remove o fundo branco, separa os personagens, reduz para a escala real (quadros de 64 × 80, personagem com ~68 px de altura), limpa as cores e alinha os pés. Depois, retoques finais no Pixelorama (gratuito).
+O primeiro script remove o fundo e a sombra, separa os personagens, reduz para a escala real (quadros de 64 × 80, personagem com ~68 px de altura), limpa as cores e alinha os pés. O segundo monta a folha no formato do jogo; no protótipo, escolha **Visual → Gemini (teste)** no provador. Retoques finais podem ser feitos no Pixelorama (gratuito).
+
+![Personagem do Gemini andando no protótipo](../prototipo/ia_andando.gif)
+
+As imagens originais do primeiro teste estão em [`ia/`](ia/).
 
 > Ainda falta separar o personagem em camadas (corpo, roupa, cabelo) para os cosméticos funcionarem. Esse passo é manual ou fica com o artista.
 

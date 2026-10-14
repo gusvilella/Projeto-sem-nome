@@ -18,6 +18,7 @@ Projeto Godot 4.4 para testar as bases técnicas descritas no [GDD](../docs/gdd/
 - **Região Casa como cena ilustrada** de 540 × 1200 em 3/4, com chão de pedra no estilo de Prontera, canteiros, poço, postes e árvores. Objetos com ordenação por profundidade (o personagem passa atrás da casa e das árvores).
 - **Toque para andar** com caminho (A*) calculado sobre uma **máscara de área caminhável**, suavizado em linha reta quando possível. Tocar num obstáculo leva ao ponto livre mais próximo.
 - **Mundo desbotado** por shader, com 4 marcos: flores (25%), fumaça na chaminé (50%), janelas e postes acesos (75%), borboletas, folhas caindo e **luz dourada** (100%).
+- **Personagem gerado por IA (teste):** no provador, **Visual → Gemini (teste)** troca as camadas por um personagem inteiro importado do Gemini (ver [gerar arte com IA](../docs/arte/gerar-com-ia.md)).
 - **Painel de testes:** controle deslizante de vida da região e um provador para trocar aparência.
 
 > O controle deslizante deixa a vida **descer** só para testes. No jogo, a vida de uma região nunca diminui (pilar "nunca punir").

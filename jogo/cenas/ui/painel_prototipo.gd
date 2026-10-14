@@ -10,6 +10,7 @@ const COR_TEXTO := Color("fcecc8")
 
 ## [rótulo, chave da aparência, origem da lista ("paleta:<grupo>" ou "item:<tipo>")]
 const OPCOES := [
+	["Visual", "completo", "item:completo"],
 	["Pele", "pele", "paleta:pele"],
 	["Cabelo", "cabelo", "item:cabelo"],
 	["Cor do cabelo", "cor_cabelo", "paleta:cabelo"],
@@ -153,6 +154,8 @@ func valores_da_opcao(chave: String) -> Array:
 	else:
 		if partes[1] == "chapeu":
 			lista.append(["", "Nenhum"])
+		elif partes[1] == "completo":
+			lista.append(["", "Em camadas"])
 		for item in Dados.itens_do_tipo(partes[1]):
 			lista.append([item["id"], item["nome"]])
 	return lista

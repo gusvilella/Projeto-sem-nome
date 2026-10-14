@@ -12,7 +12,7 @@ Funciona com prints (imagem borrada ou em escala quebrada), mas a imagem
 original baixada da ferramenta sempre dá resultado melhor.
 
 Uso:
-  python3 ferramentas/importar_sprite.py entrada.png saida.png [--altura 68] [--cores 28] [--previa previa.png]
+  python3 ferramentas/importar_sprite.py entrada.png saida.png [--quadros 4] [--altura 68] [--cores 28] [--previa previa.png]
 """
 
 import argparse
@@ -24,9 +24,10 @@ QW, QH = 64, 80
 PES_Y = 76
 
 
-def _e_fundo(c, limiar_luz=200, limiar_sat=40):
+def _e_fundo(c, limiar_luz=165, limiar_sat=45):
+    """Fundo claro e pouco saturado, incluindo a sombra rosada/acinzentada no chão."""
     r, g, b = c[:3]
-    return min(r, g, b) >= limiar_luz - 30 and max(r, g, b) - min(r, g, b) <= limiar_sat and (r + g + b) / 3 >= limiar_luz
+    return max(r, g, b) - min(r, g, b) <= limiar_sat and (r + g + b) / 3 >= limiar_luz
 
 
 def remover_fundo(img):
@@ -84,6 +85,29 @@ def separar(img, folga=4):
     return figuras
 
 
+def separar_em(img, n):
+    """Divide em n figuras cortando, perto de cada divisão esperada, na coluna com menos pixels."""
+    w, h = img.size
+    a = img.getchannel("A").load()
+    ocupacao = [sum(1 for y in range(h) if a[x, y] > 0) for x in range(w)]
+    caixa = img.getbbox()
+    x_ini, x_fim = caixa[0], caixa[2]
+    largura = (x_fim - x_ini) / n
+    cortes = [x_ini]
+    for k in range(1, n):
+        alvo = x_ini + k * largura
+        faixa = range(int(alvo - largura * 0.35), int(alvo + largura * 0.35))
+        cortes.append(min(faixa, key=lambda x: (ocupacao[x], abs(x - alvo))))
+    cortes.append(x_fim)
+    figuras = []
+    for x0, x1 in zip(cortes, cortes[1:]):
+        recorte = img.crop((x0, 0, x1, h))
+        b = recorte.getbbox()
+        if b:
+            figuras.append(recorte.crop(b))
+    return figuras
+
+
 def _contorno(img, cor=(70, 44, 52, 255)):
     """Pixels da borda da silhueta ficam escuros, como na pixel art."""
     w, h = img.size
@@ -103,6 +127,29 @@ def _contorno(img, cor=(70, 44, 52, 255)):
             px[x, y] = cor
 
 
+def _limpar_pontos(img, minimo=8):
+    """Apaga grupos de pixels soltos menores que 'minimo' (restos de sombra e ruído)."""
+    w, h = img.size
+    px = img.load()
+    visto = set()
+    for y in range(h):
+        for x in range(w):
+            if (x, y) in visto or px[x, y][3] == 0:
+                continue
+            grupo, fila = [], deque([(x, y)])
+            visto.add((x, y))
+            while fila:
+                cx, cy = fila.popleft()
+                grupo.append((cx, cy))
+                for nx, ny in ((cx + 1, cy), (cx - 1, cy), (cx, cy + 1), (cx, cy - 1)):
+                    if 0 <= nx < w and 0 <= ny < h and (nx, ny) not in visto and px[nx, ny][3] > 0:
+                        visto.add((nx, ny))
+                        fila.append((nx, ny))
+            if len(grupo) < minimo:
+                for gx, gy in grupo:
+                    px[gx, gy] = (0, 0, 0, 0)
+
+
 def reduzir(figura, altura, cores):
     escala = altura / figura.height
     w = max(1, round(figura.width * escala))
@@ -113,6 +160,7 @@ def reduzir(figura, altura, cores):
     rgb = rgb.quantize(colors=cores, method=Image.Quantize.MEDIANCUT).convert("RGB")
     saida = rgb.convert("RGBA")
     saida.putalpha(alfa)
+    _limpar_pontos(saida)
     _contorno(saida)
     return saida
 
@@ -125,9 +173,11 @@ def no_quadro(sprite):
     return quadro
 
 
-def importar(entrada, altura=68, cores=28):
+def importar(entrada, altura=68, cores=28, quadros=None):
     img = remover_fundo(Image.open(entrada))
     figuras = separar(img)
+    if quadros and len(figuras) != quadros:
+        figuras = separar_em(img, quadros)
     # sombras no chão costumam sair como figura achatada: descarta o que for baixo demais
     maior = max(f.height for f in figuras)
     figuras = [f for f in figuras if f.height > maior * 0.5]
@@ -140,10 +190,11 @@ def main():
     p.add_argument("saida")
     p.add_argument("--altura", type=int, default=68, help="altura do personagem em pixels (padrão 68)")
     p.add_argument("--cores", type=int, default=28, help="máximo de cores (padrão 28)")
+    p.add_argument("--quadros", type=int, help="quantas figuras existem (use quando estiverem encostadas)")
     p.add_argument("--previa", help="salva também uma prévia ampliada 4x")
     a = p.parse_args()
 
-    quadros = importar(a.entrada, a.altura, a.cores)
+    quadros = importar(a.entrada, a.altura, a.cores, a.quadros)
     folha = Image.new("RGBA", (QW * len(quadros), QH), (0, 0, 0, 0))
     for i, q in enumerate(quadros):
         folha.alpha_composite(q, (i * QW, 0))

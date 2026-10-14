@@ -164,9 +164,16 @@ def gerar_icone():
     print("  icon.png")
 
 
+# Pastas que este script gera (e apaga antes de gerar de novo). Arte importada,
+# como arte/personagem/ia/, não é tocada.
+PASTAS_GERADAS = ["personagem/corpo", "personagem/rosto", "personagem/cabelo", "personagem/roupa_cima",
+                  "personagem/roupa_baixo", "personagem/calcado", "personagem/chapeu", "cenario"]
+
+
 def main():
-    if ARTE.exists():
-        shutil.rmtree(ARTE)
+    for pasta in PASTAS_GERADAS:
+        if (ARTE / pasta).exists():
+            shutil.rmtree(ARTE / pasta)
     gerar_personagem()
     gerar_cenario()
     gerar_dados()

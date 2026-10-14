@@ -115,6 +115,12 @@ func _testar_personagem(p: Personagem) -> void:
 	p.vestir("cabelo", "cabelo_curto")
 	p.vestir("cor_cabelo", 2)
 
+	p.vestir("completo", "ia_gemini")
+	verificar(p.sprite("corpo").texture != null and p.sprite("corpo").material == null, "personagem completo no corpo, sem paleta")
+	verificar(p.sprite("cabelo_frente").texture == null and p.sprite("roupa_cima").texture == null, "personagem completo esconde as camadas")
+	p.vestir("completo", "")
+	verificar(p.sprite("roupa_cima").texture != null, "volta para as camadas")
+
 	# A cabeça acompanha o corpo, inclusive espelhada.
 	var ancora := Dados.vetor(Dados.ancoras["cabeca"]["lado"][0]) - Dados.vetor(Dados.ancoras["pes"])
 	p.direcao = Personagem.Direcao.LADO

@@ -37,6 +37,12 @@ func _ready() -> void:
 	await _esperar(7.0)
 	await _capturar("vida_100_poco.png")
 
+	# Personagem gerado por IA, andando de lado.
+	p.vestir("completo", "ia_gemini")
+	principal.vale.ir_para(Vector2(150, 880))
+	await _esperar(1.2)
+	await _capturar("ia_andando.png")
+
 	principal.queue_free()
 	await get_tree().process_frame
 	await _vitrine()

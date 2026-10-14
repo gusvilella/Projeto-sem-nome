@@ -38,6 +38,8 @@ var aparencia := {
 	"cor_roupa_baixo": 1,
 	"calcado": "botinha",
 	"chapeu": "",
+	## Personagem inteiro, sem camadas (ex.: gerado por IA). Vazio = usar as camadas.
+	"completo": "",
 }
 
 var _sprites := {}
@@ -78,6 +80,15 @@ func atualizar_visual() -> void:
 		return
 	var base := Dados.base_personagem
 	_definir_camada("sombra", base.get("sombra"))
+	var completo := Dados.item(aparencia.get("completo", ""))
+	if not completo.is_empty():
+		for camada in CAMADAS:
+			if camada != "sombra":
+				_definir_camada(camada, null)
+		_definir_camada("corpo", completo["textura"])
+		_cabelo_recortado = false
+		_atualizar_quadro()
+		return
 	_definir_camada("corpo", base.get("corpo"), Dados.cores_da_paleta("pele", aparencia["pele"]))
 	_definir_camada("rosto", base.get("rosto"))
 
