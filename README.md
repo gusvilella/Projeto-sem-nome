@@ -28,3 +28,4 @@ O protótipo jogável da Fase 0 está em [`jogo/`](jogo/README.md) (Godot 4.4).
 ## Arte
 
 - [Briefing para artista](docs/arte/briefing-artista.md): estilo, especificações técnicas e lista de entregas para pedir orçamento.
+- [Gerar arte com IA](docs/arte/gerar-com-ia.md): prompts prontos para o Gemini e script para trazer as imagens para o jogo.
